@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Elements Example</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        select { width: 200px; }
+    </style>
+</head>
+<body>
+
+    <h2>User Registration Form</h2>
+    
+    <form action="#" method="POST">
+
+        <!-- 1. TEXT FIELD -->
+        <div class="form-group">
+            <label for="username">Full Name (Text Field):</label>
+            <input type="text" id="username" name="username" placeholder="Enter your full name">
+        </div>
+
+        <!-- 2. LIST BOX -->
+        <!-- In HTML, a List Box is created using the <select> tag with a 'size' attribute. -->
+        <div class="form-group">
+            <label for="skills">Top Skills (List Box):</label>
+            <select id="skills" name="skills" size="4" multiple>
+                <option value="html">HTML5</option>
+                <option value="css">CSS3</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+            </select>
+        </div>
+
+        <!-- 3. CHECKBOX -->
+        <div class="form-group">
+            <label>Interests (Checkboxes):</label>
+            <input type="checkbox" id="interest1" name="interests" value="coding">
+            <label for="interest1" style="display:inline; font-weight:normal;">Coding</label><br>
+            
+            <input type="checkbox" id="interest2" name="interests" value="design">
+            <label for="interest2" style="display:inline; font-weight:normal;">Design</label>
+        </div>
+
+        <!-- 4. COMBOBOX -->
+        <!-- In HTML, a native Combobox uses an <input> tied to a <datalist>. -->
+        <!-- This allows users to type *or* pick from a dropdown list. -->
+        <div class="form-group">
+            <label for="browser">Preferred Browser (Combobox):</label>
+            <input list="browsers" id="browser" name="browser" placeholder="Type or select...">
+            <datalist id="browsers">
+                <option value="Google Chrome">
+                <option value="Mozilla Firefox">
+                <option value="Safari">
+                <option value="Microsoft Edge">
+            </datalist>
+        </div>
+
+        <button type="submit">Submit Form</button>
+
+    </form>
+
+</body>
+</html>
