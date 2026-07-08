@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properly Aligned HTML Form</title>
+    <style>
+        /* Basic reset and font setup */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Layout row for alignment */
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Fixed width for labels to keep inputs aligned */
+        .form-row label {
+            width: 130px;
+            font-weight: bold;
+            color: #333333;
+            margin-right: 15px;
+        }
+
+        /* Styling all core input elements uniformly */
+        .form-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        /* Custom height override for List Box */
+        select.form-input[multiple] {
+            height: 80px;
+        }
+
+        /* Specific row handling for Checkboxes */
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            margin-left: 145px; /* Aligns checkbox with the other fields instead of labels */
+            margin-bottom: 20px;
+        }
+
+        .checkbox-row input {
+            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-row label {
+            font-weight: normal;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form>
+        <!-- 1. Text Field -->
+        <div class="form-row">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="form-input" placeholder="Enter username">
+        </div>
+
+        <!-- 2. List Box (Select tag with multiple attribute) -->
+        <div class="form-row">
+            <label for="technologies">Technologies:</label>
+            <select id="technologies" name="technologies" class="form-input" multiple>
+                <option value="html">HTML5</option>
+                <option value="css">CSS3</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+            </select>
+        </div>
+
+        <!-- 3. Combobox (Input box connected to a datalist) -->
+        <div class="form-row">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" class="form-input" list="country-list" placeholder="Type or select...">
+            <datalist id="country-list">
+                <option value="United States"></option>
+                <option value="United Kingdom"></option>
+                <option value="India"></option>
+                <option value="Canada"></option>
+                <option value="Australia"></option>
+            </datalist>
+        </div>
+
+        <!-- 4. Check Box -->
+        <div class="checkbox-row">
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe to newsletter</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit Form</button>
+    </form>
+</div>
+
+</body>
+</html>
